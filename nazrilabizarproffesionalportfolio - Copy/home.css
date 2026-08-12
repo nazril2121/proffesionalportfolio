@@ -1,0 +1,1606 @@
+:root {
+    --bg: #0b0b0b;
+    --text: #f2f2ee;
+    --muted: #777;
+    --line: rgba(255,255,255,.15);
+    --card: #151515;
+    --nav-bg: rgba(11,11,11,.78);
+
+    /* ACCENT */
+    --accent: #f786b7;
+}
+
+
+body.light-mode {
+    --bg: #f2f1ed;
+    --text: #111;
+    --muted: #777;
+    --line: rgba(0,0,0,.15);
+    --card: #e5e4df;
+    --nav-bg: rgba(242,241,237,.78);
+
+    /* ACCENT TETAP */
+    --accent: #f786b7;
+}
+
+h1,
+h2,
+h3 {
+    color: #f786b7 !important;
+}
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    background: var(--bg);
+
+    color: var(--text);
+
+    font-family: "Inter", sans-serif;
+
+    font-weight: 300;
+
+    transition:
+        background .4s ease,
+        color .4s ease;
+
+}
+
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+
+    position: fixed;
+
+    top: 20px;
+
+    left: 3vw;
+    right: 3vw;
+
+    height: 48px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        auto
+        1fr;
+
+    align-items: center;
+
+    padding: 0 18px;
+
+    z-index: 9999;
+
+    background: var(--nav-bg);
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius: 100px;
+
+    backdrop-filter: blur(18px);
+
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+        background .4s ease,
+        border-color .4s ease;
+
+}
+
+
+.logo {
+
+    font-size: 10px;
+
+    font-weight: 600;
+
+    letter-spacing: .12em;
+
+}
+
+
+.navbar nav {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+}
+
+
+.navbar nav a {
+
+    font-size: 9px;
+
+    letter-spacing: .08em;
+
+    color: var(--muted);
+
+    transition:
+        color .25s ease;
+
+}
+
+
+.navbar nav a:hover {
+
+    color: var(--text);
+
+}
+
+
+.navbar nav a.active {
+
+    color: var(--text);
+
+}
+
+
+.navbar-right {
+
+    justify-self: end;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.nav-number {
+
+    font-size: 9px;
+
+    color: var(--muted);
+
+    letter-spacing: .1em;
+
+}
+
+
+/* =====================================================
+   THEME BUTTON
+===================================================== */
+
+.theme-toggle {
+
+    width: 26px;
+    height: 26px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    outline: none;
+
+    padding: 0;
+
+    background: transparent;
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    transition:
+        transform .35s ease,
+        color .3s ease;
+
+}
+
+
+.theme-toggle:hover {
+
+    transform: rotate(20deg);
+
+}
+
+
+.theme-toggle svg {
+
+    width: 14px;
+    height: 14px;
+
+    transition:
+        opacity .3s ease,
+        transform .4s ease;
+
+}
+
+
+/* DEFAULT = DARK */
+
+.moon-icon {
+
+    display: none;
+
+}
+
+
+/* LIGHT MODE */
+
+body.light-mode .sun-icon {
+
+    display: none;
+
+}
+
+
+body.light-mode .moon-icon {
+
+    display: block;
+
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    min-height: 100vh;
+
+    display: grid;
+
+    grid-template-columns:
+        52%
+        48%;
+
+    align-items: center;
+
+    padding:
+        140px
+        5vw
+        70px;
+
+    gap: 30px;
+
+}
+
+
+.hero-left {
+
+    padding-left: 3vw;
+
+}
+
+
+.hero-label {
+
+    display: block;
+
+    margin-bottom: 35px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .16em;
+
+    color: var(--muted);
+
+}
+
+
+.hero h1 {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(
+            90px,
+            12vw,
+            175px
+        );
+
+    font-weight: 400;
+
+    line-height: .78;
+
+    letter-spacing: -.075em;
+
+}
+
+
+.hero h1 span {
+
+    font-style: italic;
+
+}
+
+
+.hero-role {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 45px;
+
+}
+
+
+.hero-role span {
+
+    padding:
+        8px
+        11px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .1em;
+
+}
+
+
+.hero-description {
+
+    max-width: 390px;
+
+    margin-top: 35px;
+
+    font-size: 11px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+
+}
+
+
+.hero-scroll {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 65px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .12em;
+
+    color: var(--muted);
+
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-image {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 70vh;
+
+    min-height: 500px;
+
+    overflow: hidden;
+
+    background: var(--card);
+
+}
+
+
+.hero-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+.image-meta {
+
+    position: absolute;
+
+    left: 20px;
+
+    right: 20px;
+
+    bottom: 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    color: white;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .1em;
+
+    mix-blend-mode: difference;
+
+}
+
+
+/* =====================================================
+   GENERAL SECTION
+===================================================== */
+
+.experience,
+.tools,
+.youtube {
+
+    padding:
+        80px
+        5vw
+        70px;
+
+}
+
+
+/* =====================================================
+   SECTION INTRO
+===================================================== */
+
+.section-intro {
+
+    display: grid;
+
+    grid-template-columns:
+        12%
+        1fr;
+
+    padding-bottom: 55px;
+
+}
+
+
+.section-number {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    color: var(--muted);
+
+}
+
+
+.section-label {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    letter-spacing: .15em;
+
+    color: var(--muted);
+
+}
+
+
+.section-intro h2 {
+
+    margin-top: 20px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(
+            75px,
+            10vw,
+            150px
+        );
+
+    font-weight: 400;
+
+    line-height: .84;
+
+    letter-spacing: -.07em;
+
+}
+
+
+.section-intro h2 span {
+
+    font-style: italic;
+
+}
+
+
+/* =====================================================
+   EXPERIENCE
+===================================================== */
+
+.experience-item {
+
+    display: grid;
+
+    grid-template-columns:
+        7%
+        18%
+        12%
+        63%;
+
+    min-height: 220px;
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+}
+
+
+.experience-number,
+.experience-date {
+
+    padding-top: 25px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 8px;
+
+    color: var(--muted);
+
+}
+
+
+.experience-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 25px;
+
+}
+
+
+.experience-logo img {
+
+    max-width: 85px;
+
+    max-height: 70px;
+
+    object-fit: contain;
+
+    filter: grayscale(1);
+
+    opacity: .75;
+
+}
+
+
+.experience-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding:
+        35px
+        0;
+
+}
+
+
+.experience-type {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .13em;
+
+    color: var(--muted);
+
+}
+
+
+.experience-content h3 {
+
+    max-width: 600px;
+
+    margin-top: 15px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(
+            35px,
+            4vw,
+            60px
+        );
+
+    font-weight: 400;
+
+    line-height: .92;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.experience-role {
+
+    margin-top: 12px;
+
+    font-size: 10px;
+
+    color: var(--muted);
+
+}
+
+
+.experience-content p {
+
+    max-width: 420px;
+
+    margin-top: 20px;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+
+}
+
+
+/* =====================================================
+   TOOLS
+===================================================== */
+
+.tools {
+
+    padding-top: 70px;
+
+}
+
+
+.tool-logo {
+
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 60px;
+    height: 60px;
+
+    max-width: 60px;
+    max-height: 60px;
+
+    object-fit: contain;
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        );
+
+    opacity: .9;
+
+    filter: grayscale(1);
+
+    transition:
+        transform .35s ease,
+        opacity .35s ease;
+
+}
+
+
+.tool-item:hover .tool-logo {
+
+    transform:
+        translate(
+            -50%,
+            -50%
+        )
+        scale(1.1);
+
+    opacity: 1;
+
+}
+
+
+.tools-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            3,
+            1fr
+        );
+
+    border-top:
+        1px solid
+        var(--line);
+
+}
+
+
+.tool-item {
+
+    position: relative;
+
+    min-height: 140px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    padding: 22px;
+
+    border-right:
+        1px solid
+        var(--line);
+
+    border-bottom:
+        1px solid
+        var(--line);
+
+    transition:
+        background .3s ease;
+
+}
+
+
+.tool-item:hover {
+
+    background: var(--card);
+
+}
+
+
+.tool-number {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    color: var(--muted);
+
+}
+
+
+.tool-name {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 10px;
+
+    letter-spacing: .08em;
+
+}
+
+
+/* =====================================================
+   YOUTUBE
+===================================================== */
+
+.youtube-container {
+
+    display: grid;
+
+    grid-template-columns:
+        70%
+        30%;
+
+}
+
+
+.youtube-video {
+
+    aspect-ratio: 16 / 9;
+
+    background: var(--card);
+
+}
+
+
+.youtube-video iframe {
+
+    width: 100%;
+
+    height: 100%;
+
+    border: none;
+
+}
+
+
+.youtube-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 40px;
+
+}
+
+
+.youtube-info > span {
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .12em;
+
+    color: var(--muted);
+
+}
+
+
+.youtube-info h3 {
+
+    margin-top: 20px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 45px;
+
+    font-weight: 400;
+
+    line-height: .9;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.youtube-info p {
+
+    margin-top: 20px;
+
+    font-size: 10px;
+
+    line-height: 1.8;
+
+    color: var(--muted);
+
+}
+
+
+.youtube-info a {
+
+    width: fit-content;
+
+    margin-top: 25px;
+
+    padding-bottom: 8px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    font-size: 7px;
+
+    letter-spacing: .1em;
+
+}
+
+
+/* =====================================================
+DIVIDER
+===================================================== */
+
+.section-divider {
+    width: 100vw;
+    max-width: 100vw;
+
+    position: relative;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    overflow: hidden;
+
+    margin-top: 0;
+    margin-bottom: 0;
+
+    padding: 0;
+}
+
+.section-divider img,
+.section-divider video {
+    display: block;
+
+    width: 100%;
+    max-width: none;
+
+    height: auto;
+
+    object-fit: cover;
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    min-height: 70vh;
+
+    padding:
+        10vh
+        6vw
+        7vh;
+
+    border-top:
+        1px solid
+        var(--line);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+}
+
+
+.footer-label {
+
+    font-size: 9px;
+
+    letter-spacing: .15em;
+
+    color: var(--muted);
+
+}
+
+
+.footer-main h2 {
+
+    margin-top: 35px;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(
+            70px,
+            10vw,
+            160px
+        );
+
+    font-weight: 400;
+
+    line-height: .8;
+
+    letter-spacing: -.065em;
+
+}
+
+
+.footer-main h2 span {
+
+    font-style: italic;
+
+}
+
+
+.footer-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    font-size: 9px;
+
+    letter-spacing: .12em;
+
+}
+
+
+.footer-bottom > span {
+
+    color: var(--muted);
+
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+
+.footer-links a {
+
+    padding-bottom: 6px;
+
+    border-bottom:
+        1px solid
+        var(--muted);
+
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+
+    /* NAVBAR */
+
+    .navbar {
+
+        top: 15px;
+
+        left: 50%;
+
+        right: auto;
+
+        transform:
+            translateX(-50%);
+
+        width: max-content;
+
+        max-width:
+            calc(
+                100vw - 20px
+            );
+
+        height: 40px;
+
+        display: flex;
+
+        padding:
+            0 10px;
+
+        gap: 8px;
+
+        border-radius: 10px;
+
+    }
+
+
+    .logo {
+
+        display: none;
+
+    }
+
+
+    .navbar nav {
+
+        gap: 11px;
+
+    }
+
+
+    .navbar nav a {
+
+        font-size: 7px;
+
+        letter-spacing: .02em;
+
+        white-space: nowrap;
+
+    }
+
+
+    .navbar-right {
+
+        gap: 0;
+
+    }
+
+
+    .nav-number {
+
+        display: none;
+
+    }
+
+
+    .theme-toggle {
+
+        width: 22px;
+
+        height: 22px;
+
+    }
+
+
+    .theme-toggle svg {
+
+        width: 12px;
+
+        height: 12px;
+
+    }
+
+
+    /* HERO */
+
+    .hero {
+
+        min-height: auto;
+
+        display: block;
+
+        padding:
+            110px
+            7vw
+            50px;
+
+    }
+
+
+    .hero-left {
+
+        padding-left: 0;
+
+    }
+
+
+    .hero-label {
+
+        font-size: 7px;
+
+        margin-bottom: 25px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 25vw;
+
+        line-height: .76;
+
+    }
+
+
+    .hero-role {
+
+        margin-top: 30px;
+
+        gap: 7px;
+
+    }
+
+
+    .hero-role span {
+
+        font-size: 6px;
+
+        padding:
+            7px
+            9px;
+
+    }
+
+
+    .hero-description {
+
+        max-width: 280px;
+
+        margin-top: 30px;
+
+        font-size: 10px;
+
+    }
+
+
+    .hero-scroll {
+
+        margin-top: 35px;
+
+    }
+
+
+    .hero-image {
+
+        height: 60vh;
+
+        min-height: 380px;
+
+        margin-top: 40px;
+
+    }
+
+
+    /* GENERAL SECTION */
+
+    .experience,
+    .tools,
+    .youtube {
+
+        padding:
+            45px
+            6vw
+            45px;
+
+    }
+
+
+    /* SECTION INTRO */
+
+    .section-intro {
+
+        display: block;
+
+        padding-bottom: 35px;
+
+    }
+
+
+    .section-number {
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .section-intro h2 {
+
+        font-size: 16.5vw;
+
+        line-height: .84;
+
+    }
+
+
+    /* EXPERIENCE */
+
+    .experience-item {
+
+        display: grid;
+
+        grid-template-columns:
+            35px
+            1fr;
+
+        min-height: auto;
+
+        padding:
+            20px
+            0
+            25px;
+
+    }
+
+
+    .experience-item:first-child {
+
+        padding-top: 0;
+
+    }
+
+
+    .experience-number {
+
+        grid-row:
+            1 / span 4;
+
+        padding-top: 5px;
+
+    }
+
+
+    .experience-date {
+
+        grid-column: 2;
+
+        padding: 0;
+
+        font-size: 7px;
+
+    }
+
+
+    .experience-logo {
+
+        grid-column: 2;
+
+        justify-content: flex-start;
+
+        padding:
+            20px
+            0
+            10px;
+
+    }
+
+
+    .experience-logo img {
+
+        max-width: 65px;
+
+        max-height: 50px;
+
+    }
+
+
+    .experience-content {
+
+        grid-column: 2;
+
+        padding:
+            5px
+            0
+            0;
+
+    }
+
+
+    .experience-type {
+
+        font-size: 7px;
+
+    }
+
+
+    .experience-content h3 {
+
+        font-size: 30px;
+
+        margin-top: 10px;
+
+    }
+
+
+    .experience-role {
+
+        margin-top: 10px;
+
+        font-size: 8px;
+
+    }
+
+
+    .experience-content p {
+
+        max-width: 280px;
+
+        margin-top: 15px;
+
+        font-size: 9px;
+
+        line-height: 1.7;
+
+    }
+
+
+    /* TOOLS */
+
+    .tools {
+
+        padding-top: 40px;
+
+    }
+
+
+    .tools-grid {
+
+        grid-template-columns:
+            repeat(
+                2,
+                1fr
+            );
+
+    }
+
+
+    .tool-item {
+
+        min-height: 100px;
+
+        padding: 16px;
+
+    }
+
+
+    .tool-logo {
+
+        width: 48px;
+
+        height: 48px;
+
+        max-width: 48px;
+
+        max-height: 48px;
+
+    }
+
+
+    .tool-name {
+
+        font-size: 8px;
+
+    }
+
+
+    /* YOUTUBE */
+
+    .youtube-container {
+
+        display: block;
+
+    }
+
+
+    .youtube-video {
+
+        width: 100%;
+
+    }
+
+
+    .youtube-info {
+
+        padding:
+            25px
+            0
+            0;
+
+    }
+
+
+    .youtube-info h3 {
+
+        font-size: 38px;
+
+    }
+
+
+    /* GIF DIVIDER */
+
+    .gif-divider {
+
+        width: 100%;
+
+        height: auto;
+
+        margin:
+            0;
+
+        padding:
+            0;
+
+    }
+
+
+    .gif-divider img,
+    .gif-divider video {
+
+        width: 100%;
+
+        height: auto;
+
+        object-fit: cover;
+
+    }
+
+    footer {
+
+        min-height: 70vh;
+
+        padding:
+            90px
+            7vw
+            50px;
+
+    }
+
+
+    .footer-main h2 {
+
+        font-size: 20vw;
+
+    }
+
+
+    .footer-bottom {
+
+        display: block;
+
+    }
+
+
+    .footer-links {
+
+        margin-top: 30px;
+
+    }
+
+}
